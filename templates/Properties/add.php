@@ -1,5 +1,5 @@
 <div class="properties form">
-	<?= $this->Form->create($property) ?>
+	<?= $this->Form->create($property, ['type'=>'file']) ?>
 	<fieldset>
 		<legend>
 			<?= __('Add Property') ?>

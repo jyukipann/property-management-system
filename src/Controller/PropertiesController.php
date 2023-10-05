@@ -40,6 +40,7 @@ class PropertiesController extends AppController
                 $this->Flash->error(__('Unable to edit the property. There is no property with that number.'));
             } else {
                 $property = $this->Properties->patchEntity($property, $this->request->getData());
+                $property->image_1 = file_get_contents($this->request->getData('image_1'));
                 if ($this->Properties->save($property)) {
                     $this->Flash->success(__('The property has been saved.'));
                     return $this->redirect(['action' => 'edit']);
@@ -82,7 +83,6 @@ class PropertiesController extends AppController
         if (empty($property)) {
             throw new NotFoundException();
         }
-        $this->response->withType("image/jpeg");
-        $this->response->withStringBody(stream_get_contents($property->image_1));
+        return $this->response->withType("image/jpeg")->withStringBody(stream_get_contents($property->image_1));
     }
 }
