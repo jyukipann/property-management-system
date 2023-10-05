@@ -19,6 +19,7 @@ sudo ufw allow 8765
 php path/to/composer.phar create-project --prefer-dist cakephp/app:4.* property-management-system
 sudo nano /etc/apache2/conf-available/phpmyadmin.conf
 sudo a2enconf phpmyadmin.conf
+composer require "cakephp/authentication:^2.0"
 ```
 
 ```/etc/php/7.4/cli/php.ini``` を編集して、```extension=intl```を有効化
