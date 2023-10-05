@@ -44,3 +44,6 @@ CREATE TABLE users (
     modified DATETIME DEFAULT NULL
 );
 ```
+
+
+config/app_local.php内にデータベース接続情報を記述
