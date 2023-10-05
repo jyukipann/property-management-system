@@ -25,9 +25,15 @@ composer require "cakephp/authentication:^2.0"
 ```/etc/php/7.4/cli/php.ini``` を編集して、```extension=intl```を有効化
 
 サーバー起動
-```
+```bash
 bin/cake server -H 0.0.0.0
 ```
+
+```
+bin/cake bake model Users
+bin/cake bake model Properties
+```
+
 
 mysql と phpmyadmin設定
 ```mysql

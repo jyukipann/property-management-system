@@ -46,9 +46,8 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
         // POSTやGETに関係なく、ユーザーがログインしていればリダイレクトします
         if ($result->isValid()) {
-            // ログイン成功後に /article にリダイレクトします
             $redirect = $this->request->getQuery('redirect', [
-                'controller' => 'Users',
+                'controller' => 'Properties',
                 'action' => 'index',
             ]);
 
@@ -57,6 +56,16 @@ class UsersController extends AppController
         // ユーザーの送信と認証に失敗した場合にエラーを表示します
         if ($this->request->is('post') && !$result->isValid()) {
             $this->Flash->error(__('Invalid username or password'));
+        }
+    }
+
+    public function logout()
+    {
+        $result = $this->Authentication->getResult();
+        // POSTやGETに関係なく、ユーザーがログインしていればリダイレクトします
+        if ($result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect(['controller' => 'Users', 'action' => 'login']);
         }
     }
 }
