@@ -25,7 +25,7 @@ php path/to/composer.phar create-project --prefer-dist cakephp/app:4.* property-
 bin/cake server -H 0.0.0.0
 ```
 
-phpmyadmin設定
+mysql と phpmyadmin設定
 ```mysql
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
