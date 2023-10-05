@@ -14,6 +14,7 @@ sudo apt install phpmyadmin
 sudo apt install composer php-curl
 curl -s https://getcomposer.org/installer | php
 sudo apt-get install php-intl
+sudo ufw allow 8000
 sudo ufw allow 8765
 php path/to/composer.phar create-project --prefer-dist cakephp/app:4.* property-management-system
 ```
