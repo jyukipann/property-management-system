@@ -24,3 +24,20 @@ php path/to/composer.phar create-project --prefer-dist cakephp/app:4.* property-
 ```
 bin/cake server -H 0.0.0.0
 ```
+
+phpmyadmin設定
+```mysql
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;
+```
+```mysql
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(255),
+    role VARCHAR(20),
+    created DATETIME DEFAULT NULL,
+    modified DATETIME DEFAULT NULL
+);
+```
