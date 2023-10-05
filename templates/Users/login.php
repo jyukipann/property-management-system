@@ -10,6 +10,4 @@
     </fieldset>
     <?= $this->Form->submit(__('Login')); ?>
     <?= $this->Form->end() ?>
-
-    <?= $this->Html->link("user Home", ['action' => 'index']) ?>
 </div>

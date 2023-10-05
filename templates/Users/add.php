@@ -1,13 +1,15 @@
 <div class="users form">
-<?= $this->Form->create($user) ?>
+    <?= $this->Form->create($user) ?>
     <fieldset>
-        <legend><?= __('Add User') ?></legend>
+        <legend>
+            <?= __('Add User') ?>
+        </legend>
         <?= $this->Form->control('username') ?>
         <?= $this->Form->control('password') ?>
         <?= $this->Form->control('role', [
-            'options' => ['admin' => 'Admin', 'author' => 'Author']
+            'options' => ['admin' => 'Admin',]
         ]) ?>
-   </fieldset>
-<?= $this->Form->button(__('Submit')); ?>
-<?= $this->Form->end() ?>
+    </fieldset>
+    <?= $this->Form->button(__('Submit')); ?>
+    <?= $this->Form->end() ?>
 </div>
