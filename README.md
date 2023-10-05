@@ -17,6 +17,8 @@ sudo apt-get install php-intl
 sudo ufw allow 8000
 sudo ufw allow 8765
 php path/to/composer.phar create-project --prefer-dist cakephp/app:4.* property-management-system
+sudo nano /etc/apache2/conf-available/phpmyadmin.conf
+sudo a2enconf phpmyadmin.conf
 ```
 
 ```/etc/php/7.4/cli/php.ini``` を編集して、```extension=intl```を有効化
