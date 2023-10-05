@@ -19,6 +19,8 @@ class PropertiesController extends AppController
         $this->set('property', $property);
         if ($this->request->is('post')) {
             $property = $this->Properties->patchEntity($property, $this->request->getData());
+            // $property->image_1 = file_get_contents($this->request->getData('image_1'));
+            $property->image_1 = $this->request->getData('image_1')->getStream();
             if ($this->Properties->save($property)) {
                 $this->Flash->success(__('The property has been saved.'));
                 return $this->redirect(['action' => 'add']);
@@ -40,7 +42,8 @@ class PropertiesController extends AppController
                 $this->Flash->error(__('Unable to edit the property. There is no property with that number.'));
             } else {
                 $property = $this->Properties->patchEntity($property, $this->request->getData());
-                $property->image_1 = file_get_contents($this->request->getData('image_1'));
+                // $property->image_1 = file_get_contents($this->request->getData('image_1'));
+                $property->image_1 = $this->request->getData('image_1')->getStream();
                 if ($this->Properties->save($property)) {
                     $this->Flash->success(__('The property has been saved.'));
                     return $this->redirect(['action' => 'edit']);
