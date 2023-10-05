@@ -19,6 +19,8 @@ php path/to/composer.phar create-project --prefer-dist cakephp/app:4.* property-
 ```
 
 ```/etc/php/7.4/cli/php.ini``` を編集して、```extension=intl```を有効化
-```
 
+サーバー起動
+```
+bin/cake server -H 0.0.0.0
 ```
