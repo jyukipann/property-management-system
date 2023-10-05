@@ -2,7 +2,7 @@
     <?= $this->Form->create($property) ?>
     <fieldset>
         <legend>
-            <?= __('Add Property') ?>
+            <?= __('Delete Property') ?>
         </legend>
         <?= $this->Form->control('number') ?>
     </fieldset>

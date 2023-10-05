@@ -26,24 +26,44 @@ class PropertiesController extends AppController
         $this->set('property', $property);
     }
 
-    public function delete(){
+    public function edit()
+    {
+        $property = $this->Properties->newEmptyEntity();
+        if ($this->request->is('post')) {
+            $property = $this->Properties->find('all')
+                ->where(['number' => $this->request->getData()['number']])
+                ->first();
+            if (is_null($property)) {
+                $this->Flash->error(__('Unable to edit the property. There is no property with that number.'));
+            } else {
+                $property = $this->Properties->patchEntity($property, $this->request->getData());
+                if ($this->Properties->save($property)) {
+                    $this->Flash->success(__('The property has been saved.'));
+                    return $this->redirect(['action' => 'edit']);
+                }
+                $this->Flash->error(__('Unable to edit the property.'));
+            }
+        }
+        $this->set('property', $property);
+    }
+
+    public function delete()
+    {
         $property = $this->Properties->newEmptyEntity();
         if ($this->request->is('post')) {
             // $this->request->getData();
-            $property =  $this->Properties->find('all')->where(['number' => $this->request->getData()['number']])->first();
-            if( is_null($property)){
+            $property = $this->Properties->find('all')->where(['number' => $this->request->getData()['number']])->first();
+            if (is_null($property)) {
                 $this->Flash->error(__('Unable to delete the property. There is no property with that number.'));
-            }else{
-                $result = $this->Articles->delete($property);
+            } else {
+                $result = $this->Properties->delete($property);
                 return $this->redirect(['action' => 'delete']);
             }
         }
         $this->set('property', $property);
     }
 
-    public function edit(){
 
-    }
 
     public function beforeFilter(EventInterface $event)
     {

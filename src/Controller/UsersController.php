@@ -32,7 +32,7 @@ class UsersController extends AppController
         $this->set('user', $user);
     }
 
-    public function beforeFilter(\Cake\Event\EventInterface $event)
+    public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
         // ログインアクションを認証を必要としないように設定することで、
