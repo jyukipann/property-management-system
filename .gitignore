@@ -24,3 +24,4 @@
 /app/Config/database.php
 /vendors/*
 config/app_local.php
+nohup.out
