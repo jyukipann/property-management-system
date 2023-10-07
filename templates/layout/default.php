@@ -43,13 +43,13 @@ $title = " : cakePMS";
             <a href="<?= $this->Url->build('/properties') ?>"><span>Cake</span>PMS</a>
         </div>
         <div class="top-nav-links">
-            <a href="<?= $this->Url->build('/properties') ?>">Property</a>
-            <a href="<?= $this->Url->build('/properties/add') ?>">Add Property</a>
-            <a href="<?= $this->Url->build('/properties/edit') ?>">Edit Property</a>
-            <a href="<?= $this->Url->build('/properties/delete') ?>">Delete Property</a>
-            <a href="<?= $this->Url->build('/users/add') ?>">Add User</a>
-            <a href="<?= $this->Url->build('/users') ?>">User Home</a>
-            <a href="<?= $this->Url->build('/users/logout') ?>">Logout</a>
+            <a href="<?= $this->Url->build('/properties') ?>">一覧</a>
+            <a href="<?= $this->Url->build('/properties/add') ?>">追加</a>
+            <a href="<?= $this->Url->build('/properties/edit') ?>">編集</a>
+            <a href="<?= $this->Url->build('/properties/delete') ?>">削除</a>
+            <a href="<?= $this->Url->build('/users/add') ?>">ユーザー追加</a>
+            <!-- <a href="<?= $this->Url->build('/users') ?>">User Home</a> -->
+            <a href="<?= $this->Url->build('/users/logout') ?>">ログアウト</a>
             <a target="_blank" rel="noopener" href="https://jyukipann.com">jyukipann.com</a>
         </div>
     </nav>
