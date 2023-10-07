@@ -14,9 +14,16 @@ class PropertiesController extends AppController
         if ($this->request->is('get')) {
             $area = $this->request->getQuery("area");
             $budget = $this->request->getQuery("budget");
-
+            $query = $this->Properties->find()->order(['id' => 'DESC']);
+            if(!(is_null($area) || !isset($area) || $area == "")){
+                $query = $query->where(['area' => $area]);
+            }
+            if(!(is_null($budget) || !isset($budget) || $budget == "")){
+                $query = $query->where(['price <=' => $budget]);
+            }
         }
-        $this->set('properties', $this->Properties->find('all'));
+        $this->set('query', $query);
+        $this->set('properties', $query->all());
         $this->set('getQuery', $this->request->getQueryParams());
     }
 
@@ -28,6 +35,8 @@ class PropertiesController extends AppController
             $property = $this->Properties->patchEntity($property, $this->request->getData());
             // $property->image_1 = file_get_contents($this->request->getData('image_1'));
             $property->image_1 = $this->request->getData('image_1')->getStream();
+            // $areaOptions = ['', '北海道', '東北', '関東', '中部', '近畿', '中国', '四国', '九州'];
+            // $property->area = $areaOptions[$this->request->getData('area')+1];
             if ($this->Properties->save($property)) {
                 $this->Flash->success(__('The property has been saved.'));
                 return $this->redirect(['action' => 'add']);
@@ -51,6 +60,8 @@ class PropertiesController extends AppController
                 $property = $this->Properties->patchEntity($property, $this->request->getData());
                 // $property->image_1 = file_get_contents($this->request->getData('image_1'));
                 $property->image_1 = $this->request->getData('image_1')->getStream();
+                // $areaOptions = ['', '北海道', '東北', '関東', '中部', '近畿', '中国', '四国', '九州'];
+                // $property->area = $areaOptions[$this->request->getData('area')+1];
                 if ($this->Properties->save($property)) {
                     $this->Flash->success(__('The property has been saved.'));
                     return $this->redirect(['action' => 'edit']);
