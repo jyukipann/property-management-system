@@ -13,6 +13,7 @@ use Cake\ORM\Entity;
  * @property string $address
  * @property int $price
  * @property string|resource $image_1
+ * @property string|null $area
  */
 class Property extends Entity
 {
@@ -30,5 +31,6 @@ class Property extends Entity
         'address' => true,
         'price' => true,
         'image_1' => true,
+        'area' => true,
     ];
 }

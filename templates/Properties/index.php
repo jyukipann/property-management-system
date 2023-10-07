@@ -1,10 +1,11 @@
+<?= print_r($getQuery) ?>
 <script>
-    function toggleDisplay(id="search_form"){
+    function toggleDisplay(id = "search_form") {
         let current = document.getElementById(id).style.display;
         let setTo = "none";
-        if(current == "none"){
+        if (current == "none") {
             setTo = "block";
-        }else if(current == "block"){
+        } else if (current == "block") {
             setTo = "none";
         }
         document.getElementById(id).style.display = setTo;
@@ -13,12 +14,12 @@
 <div class="container">
     <div class="content" id="search_form" style="display: none;">
         <div class="properties form">
-            <?= $this->Form->create(null, ['type' => 'get', 'url' =>['action' => 'index', 'controller' => 'Properties']]); ?>
+            <?= $this->Form->create(null, ['type' => 'get', 'url' => ['action' => 'index', 'controller' => 'Properties']]); ?>
             <fieldset>
                 <legend>
                     <?= __('物件の検索') ?>
                 </legend>
-                <?= $this->Form->control('area', ['label' =>["class" => "simple", "text" => "エリア"]]) ?>
+                <?= $this->Form->control('area', ['label' => ["class" => "simple", "text" => "エリア"]]) ?>
                 <?= $this->Form->control('budget', ['label' => ["class" => "simple", "text" => "予算"]]) ?>
             </fieldset>
             <?= $this->Form->button(__('検索')); ?>

@@ -54,7 +54,8 @@ class PropertiesTable extends Table
             ->scalar('number')
             ->maxLength('number', 255)
             ->requirePresence('number', 'create')
-            ->notEmptyString('number');
+            ->notEmptyString('number')
+            ->add('number', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('address')
@@ -70,6 +71,24 @@ class PropertiesTable extends Table
             ->requirePresence('image_1', 'create')
             ->notEmptyFile('image_1');
 
+        $validator
+            ->scalar('area')
+            ->allowEmptyString('area');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->isUnique(['number']), ['errorField' => 'number']);
+
+        return $rules;
     }
 }

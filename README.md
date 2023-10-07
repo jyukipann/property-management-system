@@ -20,6 +20,8 @@ php path/to/composer.phar create-project --prefer-dist cakephp/app:4.* property-
 sudo nano /etc/apache2/conf-available/phpmyadmin.conf
 sudo a2enconf phpmyadmin.conf
 composer require "cakephp/authentication:^2.0"
+php ../../../composer.phar require --dev cakephp/debug_kit "~4.0"
+bin/cake plugin load DebugKit
 ```
 
 ```/etc/php/7.4/cli/php.ini``` を編集して、```extension=intl```を有効化
