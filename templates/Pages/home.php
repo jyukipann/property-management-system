@@ -99,26 +99,26 @@ $title = "cakePMS";
                 <hr>
                 <div class="row">
                     <div class="column">
-                        <h4>一覧</h4>
+                        <h4><a rel="noopener" href="<?= $this->Url->build('/properties/index') ?>">一覧</a></h4>
                         <p>一覧機能は、すべての登録された物件の要約情報を一覧で表示します。物件の基本情報を瞬時に確認し、必要なアクションを簡単に実行できます。</p>
                     </div>
                     <div class="column">
-                        <h4>検索</h4>
+                    <h4><a rel="noopener" href="<?= $this->Url->build('/properties/index') ?>">検索</a></h4>
                         <p>物件検索機能は、物件データベース内で迅速な検索を実行できる強力なツールです。条件に合致する物件を検索し、必要な情報を素早く見つけます。</p>
                     </div>
                 </div>
                 <hr style="visibility: hidden;">
                 <div class="row">
                     <div class="column">
-                        <h4>追加</h4>
+                        <h4><a rel="noopener" href="<?= $this->Url->build('/properties/add') ?>">追加</a></h4>
                         <p>追加機能を使用して、新しい不動産物件を登録できます。物件の詳細情報、住所、価格、および画像を追加し、データベースに新しい物件情報を保存します。</p>
                     </div>
                     <div class="column">
-                        <h4>編集</h4>
+                        <h4><a rel="noopener" href="<?= $this->Url->build('/properties/edit') ?>">編集</a></h4>
                         <p>物件編集機能を利用すると、既存の物件情報を更新できます。変更が必要な情報を簡単に編集し、最新のデータを保持します。</p>
                     </div>
                     <div class="column">
-                        <h4>削除</h4>
+                        <h4><a rel="noopener" href="<?= $this->Url->build('/properties/delete') ?>">削除</a></h4>
                         <p>物件削除機能を使用して、不要な物件情報をシステムから削除できます。誤って登録された物件や非表示にする必要のある物件をスムーズに削除します。</p>
                     </div>
                 </div>

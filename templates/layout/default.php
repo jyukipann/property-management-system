@@ -60,8 +60,12 @@ $title = " : cakePMS";
         </div>
     </main>
     <footer>
-        <div class="container" style="text-align: center">
-            <a onclick="window.scroll({top: 0, behavior: 'smooth',});">toTop</a>
+        <div class="container" style="text-align: center; margin-top: 10px;">
+            <a rel="noopener" href="<?= $this->Url->build('/pages/home') ?>">ホーム</a> |
+            <a onclick="window.scroll({top: 0, behavior: 'smooth',});"
+                style="text-align: center; margin: auto;">トップへ戻る</a> |
+            <a rel="noopener" href="<?= $this->Url->build('/users/logout') ?>"
+                style="text-align: center; margin: auto;">ログアウト</a>
         </div>
     </footer>
 </body>
