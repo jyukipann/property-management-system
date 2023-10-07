@@ -107,7 +107,7 @@ $title = "cakePMS";
                         <p>物件検索機能は、物件データベース内で迅速な検索を実行できる強力なツールです。条件に合致する物件を検索し、必要な情報を素早く見つけます。</p>
                     </div>
                 </div>
-                <hr>
+                <hr style="visibility: hidden;">
                 <div class="row">
                     <div class="column">
                         <h4>追加</h4>
