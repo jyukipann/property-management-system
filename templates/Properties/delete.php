@@ -1,11 +1,15 @@
-<div class="properties form">
-    <?= $this->Form->create($property) ?>
-    <fieldset>
-        <legend>
-            <?= __('Delete Property') ?>
-        </legend>
-        <?= $this->Form->control('number') ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')); ?>
-    <?= $this->Form->end() ?>
+<div class="container">
+    <div class="content">
+        <div class="properties form">
+            <?= $this->Form->create($property) ?>
+            <fieldset>
+                <legend>
+                    <?= __('物件の削除') ?>
+                </legend>
+                <?= $this->Form->control('number') ?>
+            </fieldset>
+            <?= $this->Form->button(__('送信')); ?>
+            <?= $this->Form->end() ?>
+        </div>
+    </div>
 </div>
