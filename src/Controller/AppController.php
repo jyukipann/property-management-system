@@ -53,4 +53,12 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
     }
+
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // このアプリケーションのすべてのコントローラのために、
+        // インデックスとビューのアクションを公開し、認証チェックをスキップします
+        $this->Authentication->addUnauthenticatedActions(['home',]);
+    }
 }
