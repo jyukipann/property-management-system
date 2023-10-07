@@ -47,6 +47,7 @@ if (!Configure::read('debug')) :
     );
 endif;
 
+$title = ":cakePMS";
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,8 +55,7 @@ endif;
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        CakePHP: the rapid development PHP framework:
-        <?= $this->fetch('title') ?>
+        <?= $this->fetch('title') ?><?= $title ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
