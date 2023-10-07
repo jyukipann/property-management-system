@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
- $title = " : cakePMS";
+$title = " : cakePMS";
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,8 @@
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?= $this->fetch('title') ?><?= $title ?>
+        <?= $this->fetch('title') ?>
+        <?= $title ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
@@ -59,6 +60,9 @@
         </div>
     </main>
     <footer>
+        <div class="container" style="text-align: center">
+            <a onclick="window.scroll({top: 0, behavior: 'smooth',});">toTop</a>
+        </div>
     </footer>
 </body>
 

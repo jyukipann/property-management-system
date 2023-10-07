@@ -11,15 +11,15 @@
     }
 </script>
 <div class="container">
-    <div class="content" id="search_form">
+    <div class="content" id="search_form" style="display: none;">
         <div class="properties form">
-            <?= $this->Form->create(null, ['type' => 'get', 'url' =>['action' => 'index','controller' => 'Properties']]); ?>
+            <?= $this->Form->create(null, ['type' => 'get', 'url' =>['action' => 'index', 'controller' => 'Properties']]); ?>
             <fieldset>
                 <legend>
                     <?= __('物件の検索') ?>
                 </legend>
-                <?= $this->Form->control('エリア') ?>
-                <?= $this->Form->control('予算') ?>
+                <?= $this->Form->control('area', ['label' =>["class" => "simple", "text" => "エリア"]]) ?>
+                <?= $this->Form->control('budget', ['label' => ["class" => "simple", "text" => "予算"]]) ?>
             </fieldset>
             <?= $this->Form->button(__('検索')); ?>
             <?= $this->Form->end() ?>
@@ -27,7 +27,7 @@
     </div>
     <hr style="visibility: hidden;">
     <div class="content">
-        <h2> 物件一覧 </h2><button onclick="toggleDisplay();">検索機能</button>
+        <h2> 物件一覧 </h2><button type="button" onclick="toggleDisplay();">検索機能</button>
         <?php
         foreach ($properties as $property) {
             echo <<<EOM

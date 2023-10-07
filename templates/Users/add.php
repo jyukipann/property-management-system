@@ -6,10 +6,11 @@
                 <legend>
                     <?= __('ユーザー登録') ?>
                 </legend>
-                <?= $this->Form->control('username') ?>
-                <?= $this->Form->control('password') ?>
+                <?= $this->Form->control('username', ['label' => ["class" => "simple", "text" => "ユーザーネーム"]]) ?>
+                <?= $this->Form->control('password', ['label' => ["class" => "simple", "text" => "パスワード"]]) ?>
                 <?= $this->Form->control('role', [
-                    'options' => ['admin' => 'Admin',]
+                    'options' => ['admin' => 'Admin',],
+                    'label' => ["class" => "simple", "text" => "権限設定"]
                 ]) ?>
             </fieldset>
             <?= $this->Form->button(__('送信')); ?>

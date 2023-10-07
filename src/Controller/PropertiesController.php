@@ -10,6 +10,9 @@ class PropertiesController extends AppController
 {
     public function index()
     {
+        if ($this->request->is('get')){
+            $this->request->getQuery("area");
+        }
         $this->set('properties', $this->Properties->find('all'));
     }
 
