@@ -1,6 +1,6 @@
 # property-management-system
 property-management-system
-[jyukipann.com:8765](https://jyukipann.com:8765/)
+[jyukipann.com:8765/](http://jyukipann.com:8765/)
 
 # installation
 Required environment :
